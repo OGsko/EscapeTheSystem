@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import roomsData from "../../data/rooms.json";
+import Nav from "../Nav/Nav";
 
 const RoomPage = () => {
   const { roomPath } = useParams();
@@ -13,7 +14,10 @@ const RoomPage = () => {
   // Senare kan det nog bytas till solved/unsolved med Context och inventory.
   // Senare kan hinten förmodligen styras med useSearchParams.
   return (
-    <main className="min-h-screen bg-zinc-950 text-green-400 flex items-center justify-center p-6">
+    <>
+    
+    <main className="min-h-screen bg-zinc-950 text-green-400 flex flex-col items-center justify-center p-6">
+      <Nav/>
       <section className="w-full max-w-3xl rounded-xl border border-green-500 bg-zinc-900 p-6 shadow-lg flex flex-col gap-4">
         <h1 className="text-3xl font-bold">{currentRoom.roomName}</h1>
         <img
@@ -27,6 +31,7 @@ const RoomPage = () => {
         </section>
       </section>
     </main>
+    </>
   );
 };
 

@@ -17,3 +17,17 @@ export interface Items {
     description: string;
     image: string;
 }
+
+
+export interface RoomsTwo {
+    "id": number;
+    "roomName": string;
+    "roomPath": string;
+    "unsolvedInstruction": string;
+    "solvedInstruction":string;
+    "hint":string;
+    "unsolvedImage":string;
+    "solvedImage": string;
+    "itemToSolve": number;
+    "itemToAdd": number | null
+}
