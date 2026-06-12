@@ -1,8 +1,5 @@
-import React from 'react'
 import roomsData from "../../data/rooms.json";
 import { Link } from "react-router-dom";
-
-
 
 import type { RoomsTwo } from '../../Type';
 

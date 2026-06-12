@@ -11,11 +11,16 @@
 ## Inventory & Items
 - inventory = spelarens items
 - itemsData = all item-data från items.json
+- InventoryProvider = gör inventory tillgängligt i hela appen
 - selectedItem = item man klickat på
 - itemToSolve = item-id som löser rummet
 - itemToAdd = item-id som spelaren får efter att ha löst rummet
 
 ## Funktioner
+- InventoryProvider
+- useInventory
+- addItemToInventory
+- setInventory
 
 ## Komponenter
 - HomePage
