@@ -1,8 +1,17 @@
-import React from 'react'
+import { useInventory } from '../../context/InventoryContext';
 
 const Inventory = () => {
+
+  const { inventory } = useInventory();
+
   return (
-    <div>Inventory</div>
+    <div>
+      {inventory.map((item) => (
+      <div key={item.id}>
+        <p>{item.item}</p>
+      </div>
+      ))}
+    </div>
   )
 }
 

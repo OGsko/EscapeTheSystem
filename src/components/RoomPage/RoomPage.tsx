@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import roomsData from "../../data/rooms.json";
+import Inventory from "../Inventory/Inventory";
 import Nav from "../Nav/Nav";
 
 const RoomPage = () => {
@@ -30,6 +31,7 @@ const RoomPage = () => {
           <p className="text-green-300">{currentRoom.hint}</p>
         </section>
       </section>
+      <Inventory />
     </main>
     </>
   );
