@@ -1,6 +1,11 @@
 import { useInventory } from "../../context/InventoryContext";
+import type { Items } from "../../Type";
 
-const Inventory = () => {
+interface InventoryProps {
+  onItemClick: (item: Items) => void;
+}
+
+const Inventory = ({ onItemClick }: InventoryProps) => {
   const { inventory } = useInventory();
 
   return (
@@ -11,7 +16,8 @@ const Inventory = () => {
         {inventory.map((item) => (
           <div
             key={item.id}
-            className="w-40 rounded-lg border border-green-700 bg-zinc-950 p-3"
+            onClick={() => onItemClick(item)}
+            className="w-40 cursor-pointer rounded-lg border border-green-700 bg-zinc-950 p-3 hover:border-green-400"
           >
             <img
               src={item.image}
