@@ -15,12 +15,15 @@
 - selectedItem = item man klickat på
 - itemToSolve = item-id som löser rummet
 - itemToAdd = item-id som spelaren får efter att ha löst rummet
+- rewardItem = itemet spelaren får efter att ha löst ett rum
 
 ## Funktioner
 - InventoryProvider
 - useInventory
 - addItemToInventory
 - setInventory
+- onItemClick = funktion som körs när spelaren klickar på ett item
+- handleItemClick = kontrollerar vilket item spelaren klickar på
 
 ## Komponenter
 - HomePage
