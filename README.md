@@ -7,6 +7,7 @@
 - roomsData = all rumsdata från rooms.json
 - currentRoom = rummet som visas just nu
 - roomName =  rummets namn
+- roomIsSolved = En variabel som jämför om användaren har fått reward item i inventory för att visa rätt bild.
 
 ## Inventory & Items
 - inventory = spelarens items
@@ -32,3 +33,6 @@
 - Nav
 - Inventory
 - Hint
+
+## State
+- lastRoomSolved = state för att kunna avgöra om sista rummet är löst.
