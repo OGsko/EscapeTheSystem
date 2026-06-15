@@ -28,3 +28,4 @@
 - VictoryPage
 - Nav
 - Inventory
+- Hint

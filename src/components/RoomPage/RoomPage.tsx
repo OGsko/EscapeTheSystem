@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import roomsData from "../../data/rooms.json";
 import Inventory from "../Inventory/Inventory";
 import Nav from "../Nav/Nav";
+import Hint from "../../Hint/Hint";
 
 const RoomPage = () => {
   const { roomPath } = useParams();
@@ -28,7 +29,7 @@ const RoomPage = () => {
         />
         <section className="flex flex-col gap-3">
           <p className="leading-relaxed">{currentRoom.unsolvedInstruction}</p>
-          <p className="text-green-300">{currentRoom.hint}</p>
+          <Hint hint = {currentRoom.hint}/>
         </section>
       </section>
       <Inventory />
