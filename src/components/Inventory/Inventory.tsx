@@ -1,18 +1,30 @@
-import { useInventory } from '../../context/InventoryContext';
+import { useInventory } from "../../context/InventoryContext";
 
 const Inventory = () => {
-
   const { inventory } = useInventory();
 
   return (
-    <div>
-      {inventory.map((item) => (
-      <div key={item.id}>
-        <p>{item.item}</p>
-      </div>
-      ))}
-    </div>
-  )
-}
+    <section className="w-full max-w-3xl rounded-xl border border-green-500 bg-zinc-900 p-4 text-green-400">
+      <h2 className="mb-4 text-2xl font-bold">Inventory</h2>
 
-export default Inventory
+      <div className="flex flex-wrap gap-4">
+        {inventory.map((item) => (
+          <div
+            key={item.id}
+            className="w-40 rounded-lg border border-green-700 bg-zinc-950 p-3"
+          >
+            <img
+              src={item.image}
+              alt={item.item}
+              className="mb-3 h-20 w-full object-contain"
+            />
+            <p className="font-semibold">{item.item}</p>
+            <p className="mt-1 text-sm text-green-300">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Inventory;
