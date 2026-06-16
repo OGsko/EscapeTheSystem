@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import roomsData from "../../data/rooms.json";
 import Inventory from "../Inventory/Inventory";
 import Nav from "../Nav/Nav";
@@ -17,16 +17,18 @@ const RoomPage = () => {
   const { addItemToInventory } = useInventory();
   const {inventory} = useInventory()
 
-  //Kolla om användaren har fått sitt reward item. 
-  const roomIsSolved = inventory.some((i) => i.id === currentRoom?.itemToAdd);
-
-
   //State för sista rummet
   const [lastRoomSolved, setLastRoomSolved] = useState(false)
 
   if (!currentRoom) {
-    return <div>Room not found</div>;
+    return <Navigate to={`/`} replace/>
   }
+
+  //Kolla om användaren har fått sitt reward item. 
+  const roomIsSolved = inventory.some((i) => i.id === currentRoom?.itemToAdd);
+  
+  
+  
   
   // Kontrollerar om spelaren använder rätt item och lägger till rummets belöning.
   const handleItemClick = (item: Items) => {
