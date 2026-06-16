@@ -17,6 +17,7 @@
 - itemToSolve = item-id som löser rummet
 - itemToAdd = item-id som spelaren får efter att ha löst rummet
 - rewardItem = itemet spelaren får efter att ha löst ett rum
+- resetInventory = återställer inventory till start-itemet UV Light
 
 ## Funktioner
 - InventoryProvider
