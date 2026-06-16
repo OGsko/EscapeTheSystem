@@ -5,6 +5,7 @@ import type { Items } from "../Type";
 interface InventoryContextType {
   inventory: Items[];
   addItemToInventory: (item: Items) => void;
+  resetInventory: () => void;
 }
 
 const InventoryContext = createContext<InventoryContextType | undefined>(
@@ -34,8 +35,12 @@ export const InventoryProvider = ({ children }: InventoryProviderProps) => {
     }
   };
 
+  const resetInventory = () => {
+    setInventory([startingItem]);
+  };
+
   return (
-    <InventoryContext.Provider value={{ inventory, addItemToInventory }}>
+    <InventoryContext.Provider value={{ inventory, addItemToInventory, resetInventory }}>
       {children}
     </InventoryContext.Provider>
   );

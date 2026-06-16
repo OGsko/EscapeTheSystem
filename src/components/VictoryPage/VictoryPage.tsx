@@ -1,8 +1,12 @@
 import Image from "./../../../public/images/winscreen.png"
 
 import { Link } from "react-router-dom"
+import { useInventory } from "../../context/InventoryContext";
 
 const VictoryPage = () => {
+
+  const { resetInventory } = useInventory();
+
   return (
     <main className="min-h-screen bg-zinc-950 text-green-400 flex flex-col items-center justify-center p-6">
     <section className="w-full max-w-3xl rounded-xl border border-green-500 bg-zinc-900 p-6 shadow-lg flex flex-col gap-4">
@@ -13,9 +17,10 @@ const VictoryPage = () => {
           className="mx-auto w-full max-w-sm max-h-[420px] rounded-lg object-cover"
         />
         <section className="flex flex-col gap-3">
-          <p className="leading-relaxed">You have succesfully escaped the evil AI facility!</p>
+          <p className="leading-relaxed">You have successfully escaped the evil AI facility!</p>
             <Link
           to="/"
+          onClick={resetInventory}
           className="inline-block rounded-lg border border-green-400 px-5 py-3 font-semibold hover:bg-green-400 hover:text-black transition"
         >
           Play again!
