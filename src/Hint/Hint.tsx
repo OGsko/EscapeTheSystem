@@ -1,39 +1,42 @@
-import { useSearchParams } from "react-router-dom"
-
-
+import { useSearchParams } from "react-router-dom";
 
 type RoomsProps = {
-    hint: string
-}
+  hint: string;
+};
 
-//tar in hinten för aktuella rummet som props.
-const Hint = ({hint}: RoomsProps) => {
-    const [searchParams, setSearchParams] = useSearchParams()
+const Hint = ({ hint }: RoomsProps) => {
+  const [searchParams, setSearchParams] = useSearchParams();
 
-    //Ändrar sök parametern till true 
-    const handleClick = () => {
-        setSearchParams({ hint: "true"})
-    }
+  const handleClick = () => {
+    setSearchParams({ hint: "true" });
+  };
 
-    //variabel som lagrar hinten för if satsen nedan
-    const hintValue = searchParams.get("hint")
+  const hintValue = searchParams.get("hint");
 
-    // togglar vilken return som ska visas beroende på variabeln ovan.
-    if (hintValue === "true") {
-        return (
-            <div>
-                <p className="text-green-300">{hint}</p>
-                <button className="inline-block rounded-lg border border-green-400 px-5 py-3 font-semibold hover:bg-green-400 hover:text-black transition" onClick={() => setSearchParams({})}>HIDE HINT</button>
-            </div>
-        )
-    }
+  if (hintValue === "true") {
+    return (
+      <div className="flex flex-col gap-4">
+        <p className="text-lg leading-8 text-lime-200/90">{hint}</p>
+        <button
+          className="inline-block w-fit rounded-lg border border-lime-600 bg-[#0f120f] px-5 py-3 font-semibold uppercase tracking-wide text-lime-300 transition hover:border-lime-500 hover:bg-lime-950/40"
+          onClick={() => setSearchParams({})}
+        >
+          HIDE HINT
+        </button>
+      </div>
+    );
+  }
 
-    if(hintValue === null) {
-        return (
-            <button className="inline-block rounded-lg border border-green-400 px-5 py-3 font-semibold hover:bg-green-400 hover:text-black transition" onClick={handleClick}>SHOW HINT</button>
+  if (hintValue === null) {
+    return (
+      <button
+        className="inline-block w-fit rounded-lg border border-lime-600 bg-[#0f120f] px-5 py-3 font-semibold uppercase tracking-wide text-lime-300 transition hover:border-lime-500 hover:bg-lime-950/40"
+        onClick={handleClick}
+      >
+        SHOW HINT
+      </button>
+    );
+  }
+};
 
-        )
-    }
-}
-
-export default Hint
+export default Hint;
