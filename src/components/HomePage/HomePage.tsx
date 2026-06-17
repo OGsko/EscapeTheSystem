@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <main className="min-h-screen bg-zinc-950 text-green-400 flex items-center justify-center p-6">
-      
       <section className="max-w-2xl border border-green-500 rounded-xl p-8 bg-zinc-900 shadow-lg">
         <h1 className="text-4xl font-bold mb-4">Project Nexus</h1>
 

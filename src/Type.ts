@@ -8,7 +8,7 @@ export interface Rooms {
     unsolvedImage:string;
     solvedImage: string;
     itemToSolve: number;
-    itemToadd: number | null
+    itemToAdd: number | null
 }
 
 export interface Items {
@@ -16,18 +16,4 @@ export interface Items {
     item: string;
     description: string;
     image: string;
-}
-
-
-export interface RoomsTwo {
-    "id": number;
-    "roomName": string;
-    "roomPath": string;
-    "unsolvedInstruction": string;
-    "solvedInstruction":string;
-    "hint":string;
-    "unsolvedImage":string;
-    "solvedImage": string;
-    "itemToSolve": number;
-    "itemToAdd": number | null
 }
