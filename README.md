@@ -4,8 +4,8 @@ A small escape room game built with React, React Router, TypeScript and Context 
 
 ## Start project
 
-npm install
-npm run dev
+- npm install
+- npm run dev
 
 ## Implemented requirements
 
