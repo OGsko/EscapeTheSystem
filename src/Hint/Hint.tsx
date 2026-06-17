@@ -15,10 +15,10 @@ const Hint = ({ hint }: RoomsProps) => {
 
   if (hintValue === "true") {
     return (
-      <div>
-        <p className="text-green-300">{hint}</p>
+      <div className="flex flex-col gap-4">
+        <p className="text-lg leading-8 text-lime-200/90">{hint}</p>
         <button
-          className="inline-block rounded-lg border border-green-400 px-5 py-3 font-semibold hover:bg-green-400 hover:text-black transition"
+          className="inline-block w-fit rounded-lg border border-lime-600 bg-[#0f120f] px-5 py-3 font-semibold uppercase tracking-wide text-lime-300 transition hover:border-lime-500 hover:bg-lime-950/40"
           onClick={() => setSearchParams({})}
         >
           HIDE HINT
@@ -30,7 +30,7 @@ const Hint = ({ hint }: RoomsProps) => {
   if (hintValue === null) {
     return (
       <button
-        className="inline-block rounded-lg border border-green-400 px-5 py-3 font-semibold hover:bg-green-400 hover:text-black transition"
+        className="inline-block w-fit rounded-lg border border-lime-600 bg-[#0f120f] px-5 py-3 font-semibold uppercase tracking-wide text-lime-300 transition hover:border-lime-500 hover:bg-lime-950/40"
         onClick={handleClick}
       >
         SHOW HINT

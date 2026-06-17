@@ -9,23 +9,39 @@ const Inventory = ({ onItemClick }: InventoryProps) => {
   const { inventory } = useInventory();
 
   return (
-    <section className="w-full max-w-3xl rounded-xl border border-green-500 bg-zinc-900 p-4 text-green-400">
-      <h2 className="mb-4 text-2xl font-bold">Inventory</h2>
+    <section className="w-full rounded-2xl border border-lime-700 bg-[#151813] p-4 text-lime-300 shadow-[0_0_30px_rgba(120,160,60,0.08)]">
+      <h2 className="mb-4 text-2xl font-black uppercase tracking-wide text-lime-300">
+        Inventory
+      </h2>
 
-      <div className="flex flex-wrap gap-4">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {inventory.map((item) => (
           <div
             key={item.id}
             onClick={() => onItemClick(item)}
-            className="w-40 cursor-pointer rounded-lg border border-green-700 bg-zinc-950 p-3 hover:border-green-400"
+            className="group relative cursor-pointer rounded-xl border border-lime-800 bg-[#0f120f] p-3 transition hover:border-lime-500 hover:bg-lime-950/30"
           >
             <img
               src={item.image}
               alt={item.item}
               className="mb-3 h-20 w-full object-contain"
             />
-            <p className="font-semibold">{item.item}</p>
-            <p className="mt-1 text-sm text-green-300">{item.description}</p>
+            <p className="font-semibold uppercase tracking-wide text-lime-200">
+              {item.item}
+            </p>
+
+            <div className="pointer-events-none absolute left-3 right-3 top-3 z-10 rounded-lg border border-lime-600 bg-[#0b0e0b]/95 p-3 opacity-0 shadow-[0_0_20px_rgba(120,160,60,0.15)] transition duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-lime-500">
+                Item info
+              </p>
+              <p className="text-sm leading-6 text-lime-100">
+                {item.description}
+              </p>
+            </div>
+
+            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-lime-500/70">
+              Hover for details
+            </p>
           </div>
         ))}
       </div>
